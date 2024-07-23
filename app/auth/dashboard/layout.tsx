@@ -1,4 +1,6 @@
 import { DashboardNavbar } from "@/components/component/dashboardNavbar";
+import User from "@/lib/states/userProvider";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,9 +14,11 @@ export default function AuthLayout({
     children: React.ReactNode;
 }>) {
     return (
+        <User>
         <div className='w-full h-full'>
             <DashboardNavbar>{children}
             </DashboardNavbar>
         </div>
+        </User>
     )
 }
