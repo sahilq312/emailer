@@ -38,7 +38,7 @@ type ServicesProp = {
   service_name: string;
 };
 
-const page = () => {
+const Page = () => {
   const user = useContext(UserContext)
   console.log(user.user);
   
@@ -67,7 +67,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 
 const NoAppPage = () => {
   return (
