@@ -13,7 +13,12 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-export default function SubscriberList() {
+type SubscriberListProp = {
+  data : Subscriber[] 
+}
+
+
+export default function SubscriberList({data} : SubscriberListProp) {
   return (
     <Card className="xl:col-span-2">
       <CardHeader className="flex flex-row items-center">
@@ -39,10 +44,11 @@ export default function SubscriberList() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
+             {data.map((item, i)=> (
+            <TableRow key={i}>
               <TableCell>
                 <div className=" text-base text-muted-foreground md:inline">
-                  liam@example.com
+                  {item.email}
                 </div>
               </TableCell>
               <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
@@ -50,6 +56,7 @@ export default function SubscriberList() {
               </TableCell>
               <TableCell className="text-center"><Trash/></TableCell>
             </TableRow>
+            )) }
             
           </TableBody>
         </Table>

@@ -12,14 +12,21 @@ type UserTestType ={
     password : string;
     verified : boolean;
     service : Service;  
-    Email_Limit : boolean; // Limit per User is 200 free email after that they are charged
+    Email_Limit : boolean; 
+    
 }
 
 interface Service {
     name_service: string;
-    subscriber: string[];  // Adjusting to string array if it's supposed to be strings
+    subscriber: Subscriber[];  
+    emails : Email[]
   }
 
 type Subscriber = {
     email : string
+}
+
+type Email = {
+    //to : string[];
+    body : string;
 }
