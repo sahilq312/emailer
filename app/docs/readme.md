@@ -1,2 +1,0 @@
-[ ] -- Auth
-[ ] --Database Connect
